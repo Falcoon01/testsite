@@ -65,8 +65,7 @@ h1 {
 
 h2 {
   color: var(--gold);
-  border-left: 6px solid var(--green);
-  padding-left: 10px;
+  padding-left: 0;
   margin-top: 0;
 }
 
@@ -699,6 +698,88 @@ h2 {
     transform: translateX(calc(100vw + 300px)) translateY(50vh) rotate(0deg) scale(0.7);
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+/* Social Media Bereich */
+.social-section {
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.social-section h2 {
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-size: 1.8em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.social-icon svg {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.youtube-icon svg {
+  fill: var(--gold);
+}
+
+.youtube-icon:hover svg {
+  fill: var(--gold);
+  opacity: 0.8;
+}
+
+.tiktok-icon svg {
+  fill: var(--gold);
+}
+
+.tiktok-icon:hover svg {
+  fill: var(--gold);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 30px;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-icon svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
