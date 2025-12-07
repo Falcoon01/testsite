@@ -496,6 +496,11 @@ h2 {
   border-top: 1px solid rgba(212,175,55,0.3);
   flex-direction: column;
   gap: 15px;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 .mos-item.active .dropdown-content {
   display: flex;

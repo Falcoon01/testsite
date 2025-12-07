@@ -82,3 +82,5 @@ Enthält die Verfügbarkeitsstatus aller MOS/AFSC Positionen.
 - Die Dateien müssen im `data/` Ordner bleiben
 
 
+
+

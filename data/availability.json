@@ -13,7 +13,7 @@
       "description": "Kernkampftruppe mit Aufgaben wie Schützen, MG-Bediener oder Grenadier. Führt Angriffs-, Sicherungs- und Verteidigungsoperationen durch. Beherrscht unterschiedliche Waffensysteme und taktische Bewegungsmuster. Übernimmt Aufgaben wie Aufklärung, Sicherung und Unterstützung im Gefecht.",
       "status": "green",
       "statusText": "Offen",
-      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg"
+      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441530913929433178/200A421.JPG?ex=69353f88&is=6933ee08&hm=b5c2dca9d43ea56c28681be18ae509b2fe9305e0a935deed61aa13186e84304f&"
     },
     {
       "code": "12B",
@@ -64,7 +64,8 @@
       "name": "TACP (JTAC)",
       "description": "Koordiniert Luftnahunterstützung direkt vom Boden aus. Identifiziert Ziele, gibt Feuerfreigaben und dirigiert Flugzeuge im Einsatzraum. Stellt Verbindung zwischen Luftwaffe und Bodentruppen her. Benötigt präzise Kommunikation, Situationsbewusstsein und taktisches Verständnis.",
       "status": "red",
-      "statusText": "Nur erfahrene Spieler"
+      "statusText": "Nur erfahrene Spieler",
+      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441531451701989476/20251121195340_1.jpg?ex=69354008&is=6933ee88&hm=97b783070d6774b728e0621258bffed1d4e9e52a6bf91bab0b369da475f8b9db&"
     },
     {
       "code": "1T2X1",
@@ -96,7 +97,3 @@
     }
   ]
 }
-
-
-
-
