@@ -500,19 +500,12 @@ h2::after {
   background: rgba(40, 40, 40, 0.3);
   padding: 25px 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.1);
-  transition: all 0.3s ease;
 }
 
 /* Zeus-Bereich passt sich der Slider-Farbe an */
 .slider-container.airforce + .zeus-section {
   border-color: #2596be;
   border-top: 1px solid rgba(37, 150, 190, 0.3);
-}
-
-.zeus-section:hover {
-  border-color: rgba(212, 175, 55, 0.8);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.2);
-  transform: translateY(-2px);
 }
 
 .zeus-section #zeus-container {
@@ -526,6 +519,12 @@ h2::after {
   width: auto;
   min-width: 700px;
   max-width: 800px;
+  transition: none !important;
+}
+
+.zeus-section #zeus-container .mos-item:hover {
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
 }
 
 .mos-item {
@@ -986,6 +985,155 @@ h2::after {
 .discord-section h2::after {
   display: none;
 }
+
+/* Voraussetzungen Bereich */
+/* Wer sind wir Bereich */
+.about-section {
+  background: rgba(40, 40, 40, 0.3);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin: 30px 0;
+  backdrop-filter: blur(10px);
+}
+
+.about-section h2 {
+  color: var(--gold);
+  text-align: center;
+  font-size: clamp(1.5em, 3.5vw, 2.2em);
+  margin-bottom: 20px;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.about-text {
+  color: var(--text);
+  font-size: clamp(1em, 2vw, 1.2em);
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.requirements-section {
+  background: rgba(40, 40, 40, 0.3);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin: 30px 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Operations Section - gleiches Design wie Voraussetzungen */
+#operations-section {
+  background: rgba(40, 40, 40, 0.3);
+  border: 2px solid var(--gold);
+  box-shadow: none;
+}
+
+#operations-section:hover {
+  box-shadow: none;
+  border-color: var(--gold);
+}
+
+.requirements-section h2 {
+  color: var(--gold);
+  text-align: center;
+  font-size: clamp(1.5em, 3.5vw, 2.2em);
+  margin-bottom: 20px;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.requirements-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.requirements-list li {
+  color: var(--text);
+  font-size: clamp(1em, 2vw, 1.2em);
+  padding: 15px 20px;
+  background: rgba(30, 30, 30, 0.4);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 50px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.requirements-list li::before {
+  content: '•';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  line-height: 1;
+}
+
+.requirements-list li:hover {
+  background: rgba(30, 30, 30, 0.5);
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
 .discord-btn {
   display: block;
   margin: 10px auto 0;
@@ -1123,6 +1271,26 @@ h2::after {
 
 .social-section h2::after {
   display: none;
+}
+
+/* Disclaimer Bereich */
+.disclaimer-section {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.disclaimer-text {
+  color: rgba(230, 230, 230, 0.7);
+  font-size: clamp(0.85em, 1.5vw, 1em);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .social-icons {
@@ -1630,6 +1798,16 @@ h2::after {
     padding: 20px 0;
   }
 
+  .disclaimer-section {
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .disclaimer-text {
+    font-size: 0.85em;
+  }
+
   .social-icons {
     gap: 25px;
   }
@@ -1647,6 +1825,49 @@ h2::after {
   /* Discord Button */
   .discord-section {
     padding: 20px 0;
+  }
+
+  .about-section {
+    padding: 20px 15px;
+    margin: 20px 0;
+  }
+
+  .about-section h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .about-text {
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
+
+  .requirements-section {
+    padding: 20px 15px;
+    margin: 20px 0;
+  }
+
+  .requirements-section h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .requirements-list {
+    gap: 12px;
+  }
+
+  .requirements-list li {
+    padding: 12px 15px;
+    padding-left: 45px;
+    font-size: 0.95em;
+    max-width: 100%;
+  }
+
+  .requirements-list li::before {
+    left: 15px;
+    font-size: 1.1em;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .discord-btn {
