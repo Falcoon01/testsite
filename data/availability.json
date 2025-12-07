@@ -2,58 +2,58 @@
   "usArmy": [
     {
       "code": "11A",
-      "name": "Infantry Officer ",
-      "description": "Squad Leader & taktische Führung",
+      "name": "Infantry Officer",
+      "description": "Leitet ein Infanterie-Squad und plant taktische Bewegungen im Einsatzgebiet. Koordiniert Feuerunterstützung, Kommunikation und Einsatzaufgaben. Verantwortlich für Befehlsweitergabe, Missionsplanung und Einsatzführung. Überwacht die Einsatzbereitschaft, Moral und Ausbildung der Soldaten.",
       "status": "red",
       "statusText": "Offen"
     },
     {
       "code": "11B",
       "name": "Infantryman",
-      "description": "Rifleman / MG / Grenadier / AT - Grundlage aller Infanterieoperationen",
+      "description": "Kernkampftruppe mit Aufgaben wie Schützen, MG-Bediener oder Grenadier. Führt Angriffs-, Sicherungs- und Verteidigungsoperationen durch. Beherrscht unterschiedliche Waffensysteme und taktische Bewegungsmuster. Übernimmt Aufgaben wie Aufklärung, Sicherung und Unterstützung im Gefecht.",
       "status": "green",
       "statusText": "Offen",
-      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441530913929433178/200A421.JPG?ex=69353f88&is=6933ee08&hm=b5c2dca9d43ea56c28681be18ae509b2fe9305e0a935deed61aa13186e84304f&"
+      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg"
     },
     {
       "code": "12B",
       "name": "Combat Engineer",
-      "description": "Sprengstoffe, Breaching, EOD",
+      "description": "Spezialisiert auf Sprengtechniken, Hindernisüberwindung und Breaching. Errichtet Verteidigungsanlagen oder beseitigt feindliche Befestigungen. Unterstützt Infanterieeinheiten beim Öffnen von Zugangswegen. Kann improvisierte Sprengfallen erkennen und Gegenmaßnahmen einleiten.",
       "status": "yellow",
       "statusText": "Breacher offen"
     },
     {
       "code": "68W",
       "name": "Combat Medic",
-      "description": "Medizinische Versorgung",
+      "description": "Verantwortlich für medizinische Erstversorgung unter Gefechtsbedingungen. Stabilisiert Verwundete und bereitet sie für Evakuierung vor. Führt lebensrettende Maßnahmen direkt an der Frontlinie aus. Unterstützt die Truppe auch präventiv durch medizinische Betreuung.",
       "status": "red",
       "statusText": "Geschlossen"
     },
     {
       "code": "25U",
       "name": "Communication Specialist",
-      "description": "Funk / JTAC-Unterstützung",
+      "description": "Betreibt Funk- und Kommunikationssysteme für die Truppe. Richtet Relaisstationen ein und stellt stabile Funkverbindungen sicher. Unterstützt Forward Air Controller/JTAC mit technischer Kommunikation. Gewährleistet zuverlässige Daten- und Sprachübertragung im Einsatz.",
       "status": "red",
       "statusText": "Geschlossen"
     },
     {
       "code": "11Z",
       "name": "Infantry Senior Sergeant",
-      "description": "Platoon Sergeant / Lead",
+      "description": "Dient als erfahrener Zugführer oder Senior NCO innerhalb der Infanterie. Koordiniert mehrere Squads und berät den Platoon Leader. Verantwortlich für Ausbildung, Disziplin und organisatorische Abläufe. Unterstützt die taktische Planung auf Zug-Ebene und überwacht ihre Umsetzung.",
       "status": "red",
       "statusText": "Nur erfahrene Spieler"
     },
     {
       "code": "153A",
       "name": "Rotary Wing Pilot",
-      "description": "Transport‑Helikopter",
+      "description": "Steuert Transporthubschrauber wie Blackhawks für Truppen- und Materialtransport. Führt Insertions, Extractions und Logistikflüge durch. Unterstützt Bodentruppen durch schnelle Beweglichkeit und Flexibilität. Muss Navigation, Flugtaktiken und Crewkoordination sicher beherrschen.",
       "status": "green",
       "statusText": "Offen"
     },
     {
       "code": "152F",
       "name": "Apache Pilot",
-      "description": "Angriffshubschrauber",
+      "description": "Pilotiert Angriffshubschrauber zur direkten Feuerunterstützung. Setzt präzise Bewaffnung wie Hellfire-Raketen oder Bordkanonen ein. Führt Aufklärung, Zielbekämpfung und Unterstützungsmissionen durch. Arbeitet eng mit Bodentruppen und JTACs zusammen, um Ziele effektiv zu bekämpfen.",
       "status": "red",
       "statusText": "Nur erfahrene Spieler"
     }
@@ -62,29 +62,28 @@
     {
       "code": "1Z3X1",
       "name": "TACP (JTAC)",
-      "description": "Koordiniert Luftunterstützung",
+      "description": "Koordiniert Luftnahunterstützung direkt vom Boden aus. Identifiziert Ziele, gibt Feuerfreigaben und dirigiert Flugzeuge im Einsatzraum. Stellt Verbindung zwischen Luftwaffe und Bodentruppen her. Benötigt präzise Kommunikation, Situationsbewusstsein und taktisches Verständnis.",
       "status": "red",
-      "statusText": "Nur erfahrene Spieler",
-       "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441531451701989476/20251121195340_1.jpg?ex=69354008&is=6933ee88&hm=97b783070d6774b728e0621258bffed1d4e9e52a6bf91bab0b369da475f8b9db&"
+      "statusText": "Nur erfahrene Spieler"
     },
     {
       "code": "1T2X1",
       "name": "PJ (Pararescue)",
-      "description": "MEDEVAC / Rescue unter Gefechtsbedingungen",
+      "description": "Führt Rettungsmissionen unter extremen Kampfbedingungen durch. Spezialisiert auf MEDEVAC, medizinische Notfallversorgung und Evakuierung. Kann hinter feindlichen Linien operieren, um Verwundete zu retten. Beherrscht Fallschirmsprung, Bergungstechniken und medizinische Expertise.",
       "status": "red",
       "statusText": "Nur erfahrene Spieler"
     },
     {
       "code": "11F",
       "name": "Fixed Wing Fighter Pilot",
-      "description": "CAS (A‑10, F/A‑18 etc.)",
+      "description": "Fliegt Kampfflugzeuge für Luftnahunterstützung (CAS) wie A-10 oder F/A-18. Bekämpft Bodenziele zur Unterstützung der Bodentruppen. Muss präzise Zielsysteme, Waffenabwurf und taktische Flugmanöver beherrschen. Koordiniert eng mit JTACs und anderen Luftfahrzeugen.",
       "status": "green",
       "statusText": "Offen"
     },
     {
       "code": "11M",
       "name": "Fixed Wing Transport Pilot",
-      "description": "Lufttransport Personal & Ausrüstung",
+      "description": "Fliegt Transportmaschinen für Personal-, Versorgungs- und Materialflüge. Führt taktische Landungen, Luftabwürfe und große Logistikoperationen durch. Gewährleistet den schnellen strategischen und taktischen Transport von Einheiten. Beherrscht komplexe Flugdynamik, Navigation und Missionsplanung.",
       "status": "red",
       "statusText": "Geschlossen"
     },
@@ -97,8 +96,6 @@
     }
   ]
 }
-
-
 
 
 
