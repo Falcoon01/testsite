@@ -457,7 +457,7 @@
     // Fallback-Daten für Verfügbarkeiten
     const fallbackAvailability = {
       usArmy: [
-        { code: "11A", name: "Infantry Officer", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
+        { code: "11A", name: "OfficerInfantry ", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
         { code: "11B", name: "Infantryman", description: "Rifleman / MG / Grenadier / AT", status: "green", statusText: "Offen" },
         { code: "12B", name: "Combat Engineer", description: "Sprengstoffe, Breaching, EOD", status: "yellow", statusText: "Breacher offen" },
         { code: "68W", name: "Combat Medic", description: "Medizinische Versorgung", status: "red", statusText: "Geschlossen" },
@@ -481,19 +481,45 @@
       if (armyContainer && data.usArmy) {
         armyContainer.innerHTML = data.usArmy.map(item => `
           <div class="mos-item">
-            <button>${item.code} – ${item.name}<span class="status-indicator ${item.status}"></span></button>
-            <div class="dropdown-content">${item.description}<br>Status: <span class="${item.status}">${item.statusText}</span></div>
+            <button>
+              <div class="mos-header">
+                <div class="mos-code">${item.code}</div>
+                <div class="mos-name">${item.name}</div>
+              </div>
+              <span class="status-indicator ${item.status}" title="${item.statusText}"></span>
+            </button>
+            <div class="dropdown-content">
+              <div class="mos-description">${item.description}</div>
+              <div class="mos-status">
+                <span class="status-label">Verfügbarkeit:</span>
+                <span class="status-value ${item.status}">${item.statusText}</span>
+              </div>
+              ${item.image ? `<div class="mos-image"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>` : ''}
+            </div>
           </div>
         `).join('');
       }
-      
+
       // US Air Force AFSC laden
       const airforceContainer = document.getElementById('airforce-afsc-container');
       if (airforceContainer && data.usAirForce) {
         airforceContainer.innerHTML = data.usAirForce.map(item => `
           <div class="mos-item">
-            <button>${item.code} – ${item.name}<span class="status-indicator ${item.status}"></span></button>
-            <div class="dropdown-content">${item.description}<br>Status: <span class="${item.status}">${item.statusText}</span></div>
+            <button>
+              <div class="mos-header">
+                <div class="mos-code">${item.code}</div>
+                <div class="mos-name">${item.name}</div>
+              </div>
+              <span class="status-indicator ${item.status}" title="${item.statusText}"></span>
+            </button>
+            <div class="dropdown-content">
+              <div class="mos-description">${item.description}</div>
+              <div class="mos-status">
+                <span class="status-label">Verfügbarkeit:</span>
+                <span class="status-value ${item.status}">${item.statusText}</span>
+              </div>
+              ${item.image ? `<div class="mos-image"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>` : ''}
+            </div>
           </div>
         `).join('');
       }
