@@ -11,6 +11,7 @@
   <div class="wrapper">
 
         <h1>1st Battalion – 75th Ranger Regiment</h1>
+        <p class="subtitle">Rangers Lead the Way!</p>
 
     <!-- Bilder‑Slider -->
     <div class="section" id="image-slider">
@@ -207,7 +208,7 @@
             <div class="operation-description">${op.description}</div>
             <div class="operation-stats">
               <span>Teilnehmer: ${op.participants}</span>
-              <span class="operation-status">${op.status}</span>
+              <span class="operation-status ${op.status === 'Geplant' ? 'status-planned' : ''}">${op.status}</span>
             </div>
             <div class="operation-details">
               <div class="operation-details-content">
