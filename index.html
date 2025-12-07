@@ -52,8 +52,12 @@
         </div>
       </div>
 
-      <div class="slider-btn btn-left" id="slideBtnLeft" onclick="moveSlide(-1)">❮</div>
-      <div class="slider-btn btn-right" id="slideBtnRight" onclick="moveSlide(1)">❯</div>
+      <div class="slider-btn btn-left" id="slideBtnLeft" onclick="moveSlide(-1)">
+        <img src="https://cdn.discordapp.com/attachments/1411105712574304337/1447033874977652878/75th_SLider.png?ex=693626d0&is=6934d550&hm=30f056359cd89039c69f7582e8917ea8fd764e7de2cfa8f9ca7cfb901a1c536b&" alt="Army Logo" class="slider-logo slider-logo-left">
+      </div>
+      <div class="slider-btn btn-right" id="slideBtnRight" onclick="moveSlide(1)">
+        <img src="https://cdn.discordapp.com/attachments/1411105712574304337/1447033875640614942/USAF_SLider.png?ex=693626d0&is=6934d550&hm=a78a6a68c96c8d848b9b5f334d7b163ad51a9c8bd03813978c54d92a33c5020f&" alt="USAF Logo" class="slider-logo slider-logo-right">
+      </div>
     </div>
 
     <!-- Einsatzberichte -->
@@ -457,7 +461,7 @@
     // Fallback-Daten für Verfügbarkeiten
     const fallbackAvailability = {
       usArmy: [
-        { code: "11A", name: "Infantry Officer", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
+        { code: "11A", name: "OfficerInfantry ", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
         { code: "11B", name: "Infantryman", description: "Rifleman / MG / Grenadier / AT", status: "green", statusText: "Offen" },
         { code: "12B", name: "Combat Engineer", description: "Sprengstoffe, Breaching, EOD", status: "yellow", statusText: "Breacher offen" },
         { code: "68W", name: "Combat Medic", description: "Medizinische Versorgung", status: "red", statusText: "Geschlossen" },
