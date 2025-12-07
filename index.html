@@ -36,7 +36,7 @@
 
     <!-- MOS/AFSC Slider -->
     <div class="section slider-container">
-      <h2>Einheiten</h2>
+      <h2>Rollen - Spezifizierungen</h2>
       <div class="slides" id="slides">
         <div class="slide" id="army-slide">
           <div class="slide-title">US Army – MOS</div>
@@ -57,6 +57,13 @@
       </div>
       <div class="slider-btn btn-right" id="slideBtnRight" onclick="moveSlide(1)">
         <img src="https://cdn.discordapp.com/attachments/1411105712574304337/1447033875640614942/USAF_SLider.png?ex=693626d0&is=6934d550&hm=a78a6a68c96c8d848b9b5f334d7b163ad51a9c8bd03813978c54d92a33c5020f&" alt="USAF Logo" class="slider-logo slider-logo-right">
+      </div>
+    </div>
+
+    <!-- Zeus Bereich -->
+    <div class="section zeus-section">
+      <div id="zeus-container">
+        <!-- Wird dynamisch geladen -->
       </div>
     </div>
 
@@ -168,10 +175,19 @@
       }
       
       // Rahmen blau machen auf Air Force Seite (index 1)
+      const zeusSection = document.querySelector('.zeus-section');
       if (index === 1) {
         sliderContainer.classList.add('airforce');
+        if (zeusSection) {
+          zeusSection.style.borderColor = '#2596be';
+          zeusSection.style.borderTopColor = 'rgba(37, 150, 190, 0.3)';
+        }
       } else {
         sliderContainer.classList.remove('airforce');
+        if (zeusSection) {
+          zeusSection.style.borderColor = '#007800';
+          zeusSection.style.borderTopColor = 'rgba(0, 120, 0, 0.4)';
+        }
       }
     }
     
@@ -695,7 +711,9 @@
         { code: "1Z3X1", name: "TACP (JTAC)", description: "Koordiniert Luftnahunterstützung direkt vom Boden aus. Identifiziert Ziele, gibt Feuerfreigaben und dirigiert Flugzeuge im Einsatzraum. Stellt Verbindung zwischen Luftwaffe und Bodentruppen her. Benötigt präzise Kommunikation, Situationsbewusstsein und taktisches Verständnis.", status: "red", statusText: "Nur erfahrene Spieler", image: "https://cdn.discordapp.com/attachments/1393842094258524160/1441531451701989476/20251121195340_1.jpg?ex=69354008&is=6933ee88&hm=97b783070d6774b728e0621258bffed1d4e9e52a6bf91bab0b369da475f8b9db&" },
         { code: "1T2X1", name: "PJ (Pararescue)", description: "Führt Rettungsmissionen unter extremen Kampfbedingungen durch. Spezialisiert auf MEDEVAC, medizinische Notfallversorgung und Evakuierung. Kann hinter feindlichen Linien operieren, um Verwundete zu retten. Beherrscht Fallschirmsprung, Bergungstechniken und medizinische Expertise.", status: "red", statusText: "Nur erfahrene Spieler" },
         { code: "11F", name: "Fixed Wing Fighter Pilot", description: "Fliegt Kampfflugzeuge für Luftnahunterstützung (CAS) wie A-10 oder F/A-18. Bekämpft Bodenziele zur Unterstützung der Bodentruppen. Muss präzise Zielsysteme, Waffenabwurf und taktische Flugmanöver beherrschen. Koordiniert eng mit JTACs und anderen Luftfahrzeugen.", status: "green", statusText: "Offen" },
-        { code: "11M", name: "Fixed Wing Transport Pilot", description: "Fliegt Transportmaschinen für Personal-, Versorgungs- und Materialflüge. Führt taktische Landungen, Luftabwürfe und große Logistikoperationen durch. Gewährleistet den schnellen strategischen und taktischen Transport von Einheiten. Beherrscht komplexe Flugdynamik, Navigation und Missionsplanung.", status: "red", statusText: "Geschlossen" },
+        { code: "11M", name: "Fixed Wing Transport Pilot", description: "Fliegt Transportmaschinen für Personal-, Versorgungs- und Materialflüge. Führt taktische Landungen, Luftabwürfe und große Logistikoperationen durch. Gewährleistet den schnellen strategischen und taktischen Transport von Einheiten. Beherrscht komplexe Flugdynamik, Navigation und Missionsplanung.", status: "red", statusText: "Geschlossen" }
+      ],
+      administration: [
         { code: "Zeus", name: "Gamemaster", description: "Missionsleitung / Koordination", status: "yellow", statusText: "Auf Anfrage" }
       ]
     };
@@ -729,6 +747,30 @@
       const airforceContainer = document.getElementById('airforce-afsc-container');
       if (airforceContainer && data.usAirForce) {
         airforceContainer.innerHTML = data.usAirForce.map(item => `
+          <div class="mos-item">
+            <button>
+              <div class="mos-header">
+                <div class="mos-code">${item.code}</div>
+                <div class="mos-name">${item.name}</div>
+              </div>
+              <span class="status-indicator ${item.status}" title="${item.statusText}"></span>
+            </button>
+            <div class="dropdown-content">
+              <div class="mos-description">${item.description}</div>
+              <div class="mos-status">
+                <span class="status-label">Verfügbarkeit:</span>
+                <span class="status-value ${item.status}">${item.statusText}</span>
+              </div>
+              ${item.image ? `<div class="mos-image"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>` : ''}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Administration Bereich laden
+      const zeusContainer = document.getElementById('zeus-container');
+      if (zeusContainer && data.administration) {
+        zeusContainer.innerHTML = data.administration.map(item => `
           <div class="mos-item">
             <button>
               <div class="mos-header">

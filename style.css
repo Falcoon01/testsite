@@ -80,6 +80,31 @@ h2 {
   color: var(--gold);
   padding-left: 0;
   margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: clamp(1.5em, 3.5vw, 2.2em);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
 .reload-btn {
@@ -408,8 +433,9 @@ h2 {
 .slider-container {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius) var(--radius) 0 0;
   border: 2px solid var(--green);
+  border-bottom: none;
   backdrop-filter: blur(10px);
   margin-top: 20px;
   background: rgba(40, 40, 40, 0.3);
@@ -431,13 +457,75 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#army-mos-container,
+#airforce-afsc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .slide-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: clamp(1.3em, 2.5vw, 1.8em);
+  font-weight: 700;
+  margin-bottom: 25px;
   color: var(--gold);
   text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 
+    1px 1px 6px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(212, 175, 55, 0.3),
+    0 0 30px rgba(212, 175, 55, 0.15);
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.slide-title::after {
+  display: none;
+}
+
+/* Zeus Bereich */
+.zeus-section {
+  margin-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  border: 2px solid var(--green);
+  border-top: 1px solid rgba(0, 120, 0, 0.4);
+  backdrop-filter: blur(10px);
+  background: rgba(40, 40, 40, 0.3);
+  padding: 25px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Zeus-Bereich passt sich der Slider-Farbe an */
+.slider-container.airforce + .zeus-section {
+  border-color: #2596be;
+  border-top: 1px solid rgba(37, 150, 190, 0.3);
+}
+
+.zeus-section:hover {
+  border-color: rgba(212, 175, 55, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+.zeus-section #zeus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.zeus-section #zeus-container .mos-item {
+  width: auto;
+  min-width: 700px;
+  max-width: 800px;
 }
 
 .mos-item {
@@ -448,13 +536,14 @@ h2 {
   background: rgba(60, 60, 60, 0.4);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  width: 100%;
+  width: auto;
   min-width: 700px;
   max-width: 800px;
   overflow: hidden;
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
   position: relative;
+  align-self: center;
 }
 .mos-item:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.6);
@@ -519,24 +608,72 @@ h2 {
 
 .status-indicator {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  margin-left: 8px;
-  box-shadow: 0 0 8px currentColor;
+  margin-left: 10px;
   flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 0 10px currentColor, 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
 }
+
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.6;
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
 .status-indicator.green {
   background-color: #00ff6a;
   color: #00ff6a;
+  box-shadow: 0 0 10px #00ff6a, 0 0 20px rgba(0, 255, 106, 0.4);
 }
+
 .status-indicator.yellow {
   background-color: #ffd700;
   color: #ffd700;
+  box-shadow: 0 0 10px #ffd700, 0 0 20px rgba(255, 215, 0, 0.4);
 }
+
 .status-indicator.red {
   background-color: #ff4c4c;
   color: #ff4c4c;
+  box-shadow: 0 0 10px #ff4c4c, 0 0 20px rgba(255, 76, 76, 0.4);
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
 }
 
 .mos-item .dropdown-content {
@@ -610,42 +747,100 @@ h2 {
 }
 
 .mos-status {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-size: 14px;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(40, 40, 40, 0.6), rgba(30, 30, 30, 0.8));
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  width: fit-content;
+  max-width: 100%;
 }
 
 .status-label {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
 }
 
 .status-value {
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.status-value::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.status-value:hover::before {
+  left: 100%;
 }
 
 .status-value.green {
-  background: rgba(0, 255, 106, 0.2);
+  background: linear-gradient(135deg, rgba(0, 255, 106, 0.25), rgba(0, 255, 106, 0.15));
   color: #00ff6a;
-  border: 1px solid rgba(0, 255, 106, 0.3);
+  border: 1.5px solid rgba(0, 255, 106, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 255, 106, 0.3), 0 0 12px rgba(0, 255, 106, 0.15);
+}
+
+.status-value.green::after {
+  content: '✓';
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 4px;
 }
 
 .status-value.yellow {
-  background: rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.15));
   color: #ffd700;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3), 0 0 12px rgba(255, 215, 0, 0.15);
+}
+
+.status-value.yellow::after {
+  content: '⚠';
+  font-size: 14px;
+  margin-left: 4px;
 }
 
 .status-value.red {
-  background: rgba(255, 76, 76, 0.2);
+  background: linear-gradient(135deg, rgba(255, 76, 76, 0.25), rgba(255, 76, 76, 0.15));
   color: #ff4c4c;
-  border: 1px solid rgba(255, 76, 76, 0.3);
+  border: 1.5px solid rgba(255, 76, 76, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 76, 76, 0.3), 0 0 12px rgba(255, 76, 76, 0.15);
+}
+
+.status-value.red::after {
+  content: '✕';
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 4px;
 }
 
 .mos-image {
@@ -774,15 +969,26 @@ h2 {
 }
 .discord-section h2 {
   text-align: center;
-  font-size: 2.2em;
+  font-size: clamp(1.5em, 3.5vw, 2.2em);
   margin-bottom: 15px;
-  text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.2);
   border: none;
   padding: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.discord-section h2::after {
+  display: none;
 }
 .discord-btn {
   display: block;
-  margin: 20px auto 0;
+  margin: 10px auto 0;
   background: linear-gradient(135deg, var(--gold), #e7c75b);
   color: var(--blue);
   padding: 18px 40px;
@@ -913,6 +1119,10 @@ h2 {
   margin-bottom: 8px;
   font-size: 1.8em;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.social-section h2::after {
+  display: none;
 }
 
 .social-icons {
@@ -1081,6 +1291,13 @@ h2 {
     flex-wrap: wrap;
   }
 
+  /* Zeus Bereich für Tablets */
+  .zeus-section {
+    padding: 20px 25px;
+    margin-top: 15px;
+  }
+
+
   .operation-details-content {
     padding: 20px 18px;
     gap: 18px;
@@ -1219,16 +1436,32 @@ h2 {
   }
 
   .mos-status {
-    font-size: 13px;
+    display: inline-flex;
+    font-size: 12px;
     margin-top: 8px;
+    padding: 10px 14px;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .status-label {
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
   }
 
   .status-value {
-    padding: 6px 12px;
-    font-size: 12px;
+    padding: 6px 14px;
+    font-size: 11px;
     min-height: 32px;
     display: flex;
     align-items: center;
+    letter-spacing: 0.6px;
+  }
+
+  .status-value::after {
+    font-size: 12px;
   }
 
   .mos-image {
@@ -1296,6 +1529,13 @@ h2 {
     margin-bottom: 25px;
     padding: 15px 10px;
   }
+
+  /* Zeus Bereich für Smartphones */
+  .zeus-section {
+    padding: 18px 20px;
+    margin-top: 15px;
+  }
+
 
   .section h2 {
     margin-bottom: 18px;
@@ -1422,13 +1662,46 @@ h2 {
 
   /* Status Indicators */
   .status-indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+  }
+
+  .status-indicator.green {
+    box-shadow: 0 0 8px #00ff6a, 0 0 15px rgba(0, 255, 106, 0.3);
+  }
+
+  .status-indicator.yellow {
+    box-shadow: 0 0 8px #ffd700, 0 0 15px rgba(255, 215, 0, 0.3);
+  }
+
+  .status-indicator.red {
+    box-shadow: 0 0 8px #ff4c4c, 0 0 15px rgba(255, 76, 76, 0.3);
+  }
+
+  .mos-status {
+    display: inline-flex;
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 11px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .status-label {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
   }
 
   .status-value {
-    font-size: 12px;
-    padding: 4px 8px;
+    font-size: 10px;
+    padding: 5px 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .status-value::after {
+    font-size: 11px;
   }
 
   /* A-10 Animation anpassen */

@@ -87,7 +87,9 @@
       "description": "Fliegt Transportmaschinen für Personal-, Versorgungs- und Materialflüge. Führt taktische Landungen, Luftabwürfe und große Logistikoperationen durch. Gewährleistet den schnellen strategischen und taktischen Transport von Einheiten. Beherrscht komplexe Flugdynamik, Navigation und Missionsplanung.",
       "status": "red",
       "statusText": "Geschlossen"
-    },
+    }
+  ],
+  "administration": [
     {
       "code": "Zeus",
       "name": "Gamemaster",
