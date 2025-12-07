@@ -27,7 +27,7 @@
 
     <!-- Einsatzberichte -->
     <div class="section discord-section">
-      <h2>Jetzt mit machen</h2>
+      <h2>Jetzt mitmachen</h2>
       <a class="discord-btn" href="https://discord.gg/HGc3SSSxrm" target="_blank" id="discordBtn">Discord beitreten</a>
     </div>
 
@@ -63,8 +63,17 @@
     <!-- Einsatzberichte -->
     <div class="section" id="operations-section">
       <h2>Einsatzberichte</h2>
+      <div class="operations-controls">
+        <div class="search-container">
+          <input type="text" id="operations-search" placeholder="Einsätze durchsuchen..." class="search-input">
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
       <div id="operations-container">
         <!-- Wird dynamisch aus operations.json geladen -->
+      </div>
+      <div id="operations-pagination" class="pagination-container">
+        <!-- Wird dynamisch generiert -->
       </div>
     </div>
 
@@ -184,17 +193,16 @@
       operations: [
         {
           id: 1,
-          title: "Operation Thunder Strike",
-          date: "2025-12-01",
-          time: "14:30",
+          title: "Operation Shattered Wheel",
+          date: "2025-10-18",
+          time: "19:00",
           type: "Kampfeinsatz",
           description: "Koordinierte Angriffsoperation gegen feindliche Stellungen im Norden. Erfolgreiche Einnahme strategischer Positionen.",
-          detailedDescription: "Die Operation Thunder Strike wurde als koordinierte Angriffsoperation gegen feindliche Stellungen im nördlichen Sektor durchgeführt. Das 1st Battalion – 75th Ranger Regiment führte eine präzise Angriffsoperation durch, die zur erfolgreichen Einnahme strategischer Positionen führte. Die Operation umfasste koordinierte Manöver zwischen Infanterieeinheiten und Luftunterstützung. Alle Ziele wurden erfolgreich erreicht, ohne Verluste auf unserer Seite.",
-          participants: 24,
+          detailedDescription: "Nach Abschluss der Operation Iron Whisper verschärfte sich die politische Situation in Al-Basrah deutlich. Der Tod des HVT Yasin al-Sahari sowie die Zerstörung kritischer Infrastruktur führten zu diplomatischen Spannungen zwischen der neuen Regierung und den USA. Infolgedessen wurden der US-Botschafter sowie die eingesetzten Marine-Kontingente abgezogen; die US Army übernahm fortan die Rolle der primären Streitkräfte in der AO.\n\nAktuelle nachrichtendienstliche Erkenntnisse von CIA und RRC bestätigen eine Reorganisation feindlicher Strukturen unter Führung des abtrünnigen Ex-Generals Jajil Fahim. Dieser pflegte enge Verbindungen sowohl zum verstorbenen al-Sahari als auch zum bekannten VBIED-Spezialisten Salah \"Al-Hayy\" Mansour.\n\nIn den Außenbezirken Al-Basrahs wurden zunehmende Bewegungen verdächtiger Gruppierungen festgestellt. Die Lageanalyse deutet auf Vorbereitungen möglicher Anschläge oder Umsturzhandlungen hin. Gleichzeitig hat die lokale Drogenorganisation „Al-Nakhla al-Sawdā\" ein Bündnis mit Fahim geschlossen und finanziert militärische Aktivitäten der Gruppierung über Drogen- und Geldströme. Geheimdienstliche Hinweise verorten ein bedeutendes Geld- und Drogendepot in unmittelbarer Nähe einer vermuteten VBIED-Fabrik. Die Bedrohungslage umfasst erfahrene feindliche Kämpfer, mögliche IED-Gefährdung, schwere Bewaffnung sowie lokale Unterstützung im Zielgebiet.",
+          participants: 12,
           status: "Abgeschlossen",
           images: [
-            "https://cdn.discordapp.com/attachments/1393842094258524160/1446926972751188101/20251206155655_1.jpg?ex=6935c340&is=693471c0&hm=ef5603b6357d27adbf45f09a48dca28d3e93a98777f7c8b91470ba29a96ec9e5&",
-            "https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&"
+            "https://cdn.discordapp.com/attachments/1396821011038474310/1432484958831771708/1_75RB_Promo25_Shattered_Wheel.png?ex=69354c54&is=6933fad4&hm=4a16c07f391d13108fc310304c11c156b15cc8f148b2d0eac3eb8358465e300c&"
           ]
         },
         {
@@ -208,83 +216,296 @@
           participants: 12,
           status: "Abgeschlossen",
           images: [
-            "https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&"
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&"
+          ]
+        },
+        {
+          id: 3,
+          title: "Operation Desert Storm",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+          ]
+        },
+        {
+          id: 4,
+          title: "Operation 4",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+          ]
+        },
+        {
+          id: 5,
+          title: "Operation 5",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+          ]
+        },
+        {
+          id: 6,
+          title: "Operation 6",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+          ]
+        },
+        {
+          id: 7,
+          title: "Operation 7",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+          ]
+        },
+        {
+          id: 8,
+          title: "Operation 8",
+          date: "2025-11-25",
+          time: "10:15",
+          type: "Kampfeinsatz",
+          description: "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+          detailedDescription: "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+          participants: 32,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
           ]
         }
       ]
     };
 
+    // Globale Variablen für Pagination und Suche
+    let allOperations = [];
+    let currentPage = 1;
+    const itemsPerPage = 5;
+    let searchQuery = '';
+
     function renderOperations(data) {
-      const container = document.getElementById('operations-container');
-      if (container && data.operations) {
-        container.innerHTML = data.operations.map(op => `
-          <div class="operation-card" data-operation-id="${op.id}">
-            <div class="operation-header">
-              <h3 class="operation-title">${op.title}</h3>
-              <div class="operation-meta">
-                <span class="operation-type">${op.type}</span>
-                <span class="operation-date">${new Date(op.date).toLocaleDateString('de-DE')}</span>
-              </div>
-            </div>
-            <div class="operation-description">${op.description}</div>
-            <div class="operation-stats">
-              <span>Teilnehmer: ${op.participants}</span>
-              <span class="operation-status ${op.status === 'Geplant' ? 'status-planned' : ''}">${op.status}</span>
-            </div>
-            <div class="operation-details">
-              <div class="operation-details-content">
-                <div class="operation-details-header">
-                  <h3 class="operation-details-title">${op.title}</h3>
-                  <div class="operation-details-meta">
-                    <span>Datum: ${new Date(op.date).toLocaleDateString('de-DE')}</span>
-                    ${op.time ? `<span>Zeit: ${op.time} Uhr</span>` : ''}
-                  </div>
-                </div>
-                ${op.detailedDescription ? `<div class="operation-details-text">${op.detailedDescription}</div>` : ''}
-                ${(op.images && op.images.length > 0) ? `
-                  <div class="operation-image-slider" data-operation-id="${op.id}">
-                    ${op.images.map((img, idx) => `
-                      <img src="${img}" alt="${op.title} - Bild ${idx + 1}" class="operation-details-image ${idx === 0 ? 'active' : ''}">
-                    `).join('')}
-                    ${op.images.length > 1 ? `
-                      <button class="operation-slider-btn operation-slider-btn-left" onclick="moveOperationImage(${op.id}, -1)" aria-label="Vorheriges Bild">❮</button>
-                      <button class="operation-slider-btn operation-slider-btn-right" onclick="moveOperationImage(${op.id}, 1)" aria-label="Nächstes Bild">❯</button>
-                    ` : ''}
-                  </div>
-                ` : (op.image ? `<img src="${op.image}" alt="${op.title}" class="operation-details-image">` : '')}
-              </div>
-            </div>
-          </div>
-        `).join('');
-        
-        // Click-Handler für Aufklappen hinzufügen
-        document.querySelectorAll('.operation-card').forEach(card => {
-          card.addEventListener('click', function(e) {
-            // Verhindere Aufklappen wenn auf Slider-Button geklickt wird
-            if (e.target.classList.contains('operation-slider-btn')) {
-              return;
-            }
-            this.classList.toggle('active');
-            
-            // Starte automatisches Wechseln wenn geöffnet
-            if (this.classList.contains('active')) {
-              const operationId = this.dataset.operationId;
-              startOperationImageAutoSlide(operationId);
-            } else {
-              // Stoppe automatisches Wechseln wenn geschlossen
-              const operationId = this.dataset.operationId;
-              stopOperationImageAutoSlide(operationId);
-            }
-          });
-        });
-        
-        // Initialisiere automatisches Wechseln für alle geöffneten Slider
-        document.querySelectorAll('.operation-card.active').forEach(card => {
-          const operationId = card.dataset.operationId;
-          startOperationImageAutoSlide(operationId);
+      if (!data || !data.operations) return;
+      
+      // Speichere alle Operationen global
+      allOperations = [...data.operations];
+      
+      // Sortiere nach ID (höchste zuerst)
+      allOperations.sort((a, b) => b.id - a.id);
+      
+      // Initialisiere Suche und Pagination
+      setupSearchAndPagination();
+      filterAndRenderOperations();
+    }
+
+    function setupSearchAndPagination() {
+      const searchInput = document.getElementById('operations-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.toLowerCase().trim();
+          currentPage = 1; // Zurück zur ersten Seite bei neuer Suche
+          filterAndRenderOperations();
         });
       }
     }
+
+    function filterAndRenderOperations() {
+      // Filtere Operationen basierend auf Suchanfrage
+      let filteredOperations = allOperations;
+      if (searchQuery) {
+        filteredOperations = allOperations.filter(op => {
+          const searchText = searchQuery;
+          return (
+            op.title.toLowerCase().includes(searchText) ||
+            op.description.toLowerCase().includes(searchText) ||
+            op.type.toLowerCase().includes(searchText) ||
+            op.status.toLowerCase().includes(searchText) ||
+            (op.detailedDescription && op.detailedDescription.toLowerCase().includes(searchText))
+          );
+        });
+      }
+
+      // Berechne Pagination
+      const totalPages = Math.ceil(filteredOperations.length / itemsPerPage);
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const operationsToShow = filteredOperations.slice(startIndex, endIndex);
+
+      // Rendere Operationen
+      const container = document.getElementById('operations-container');
+      if (container) {
+        if (operationsToShow.length === 0) {
+          container.innerHTML = '<div class="no-results">Keine Einsätze gefunden.</div>';
+        } else {
+          container.innerHTML = operationsToShow.map(op => `
+            <div class="operation-card" data-operation-id="${op.id}">
+              <div class="operation-header">
+                <h3 class="operation-title">${op.title}</h3>
+                <div class="operation-meta">
+                  <span class="operation-type">${op.type}</span>
+                  <span class="operation-date">${new Date(op.date).toLocaleDateString('de-DE')}</span>
+                </div>
+              </div>
+              <div class="operation-description">${op.description}</div>
+              <div class="operation-stats">
+                <span>Teilnehmer: ${op.participants}</span>
+                <span class="operation-status ${op.status === 'Geplant' ? 'status-planned' : ''}">${op.status}</span>
+              </div>
+              <div class="operation-details">
+                <div class="operation-details-content">
+                  <div class="operation-details-header">
+                    <h3 class="operation-details-title">${op.title}</h3>
+                    <div class="operation-details-meta">
+                      <span>Datum: ${new Date(op.date).toLocaleDateString('de-DE')}</span>
+                      ${op.time ? `<span>Zeit: ${op.time} Uhr</span>` : ''}
+                    </div>
+                  </div>
+                  ${op.detailedDescription ? `<div class="operation-details-text">${op.detailedDescription}</div>` : ''}
+                  ${(op.images && op.images.length > 0) ? `
+                    <div class="operation-image-slider" data-operation-id="${op.id}">
+                      ${op.images.map((img, idx) => `
+                        <img src="${img}" alt="${op.title} - Bild ${idx + 1}" class="operation-details-image ${idx === 0 ? 'active' : ''}">
+                      `).join('')}
+                      ${op.images.length > 1 ? `
+                        <button class="operation-slider-btn operation-slider-btn-left" onclick="moveOperationImage(${op.id}, -1)" aria-label="Vorheriges Bild">❮</button>
+                        <button class="operation-slider-btn operation-slider-btn-right" onclick="moveOperationImage(${op.id}, 1)" aria-label="Nächstes Bild">❯</button>
+                      ` : ''}
+                    </div>
+                  ` : (op.image ? `<img src="${op.image}" alt="${op.title}" class="operation-details-image">` : '')}
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // Rendere Pagination
+      renderPagination(totalPages, filteredOperations.length);
+
+      // Click-Handler für Aufklappen hinzufügen
+      document.querySelectorAll('.operation-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Verhindere Aufklappen wenn auf Slider-Button geklickt wird
+          if (e.target.classList.contains('operation-slider-btn')) {
+            return;
+          }
+          this.classList.toggle('active');
+          
+          // Starte automatisches Wechseln wenn geöffnet
+          if (this.classList.contains('active')) {
+            const operationId = this.dataset.operationId;
+            startOperationImageAutoSlide(operationId);
+          } else {
+            // Stoppe automatisches Wechseln wenn geschlossen
+            const operationId = this.dataset.operationId;
+            stopOperationImageAutoSlide(operationId);
+          }
+        });
+      });
+      
+      // Initialisiere automatisches Wechseln für alle geöffneten Slider
+      document.querySelectorAll('.operation-card.active').forEach(card => {
+        const operationId = card.dataset.operationId;
+        startOperationImageAutoSlide(operationId);
+      });
+    }
+
+    function renderPagination(totalPages, totalItems) {
+      const paginationContainer = document.getElementById('operations-pagination');
+      if (!paginationContainer) return;
+
+      if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+      }
+
+      let paginationHTML = '<div class="pagination-info">';
+      const startIndex = (currentPage - 1) * itemsPerPage + 1;
+      const endIndex = Math.min(currentPage * itemsPerPage, totalItems);
+      paginationHTML += `Zeige ${startIndex}-${endIndex} von ${totalItems} Einsätzen</div>`;
+      paginationHTML += '<div class="pagination-buttons">';
+
+      // Vorherige Seite Button
+      if (currentPage > 1) {
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage - 1})">❮ Zurück</button>`;
+      } else {
+        paginationHTML += `<button class="pagination-btn disabled" disabled>❮ Zurück</button>`;
+      }
+
+      // Seitenzahlen
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+          if (i === currentPage) {
+            paginationHTML += `<button class="pagination-btn active">${i}</button>`;
+          } else {
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(${i})">${i}</button>`;
+          }
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+          paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+        }
+      }
+
+      // Nächste Seite Button
+      if (currentPage < totalPages) {
+        paginationHTML += `<button class="pagination-btn" onclick="changePage(${currentPage + 1})">Weiter ❯</button>`;
+      } else {
+        paginationHTML += `<button class="pagination-btn disabled" disabled>Weiter ❯</button>`;
+      }
+
+      paginationHTML += '</div>';
+      paginationContainer.innerHTML = paginationHTML;
+    }
+
+    window.changePage = function(page) {
+      currentPage = page;
+      filterAndRenderOperations();
+      // Scroll nach oben zum Container
+      const container = document.getElementById('operations-section');
+      if (container) {
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
     
     // Automatisches Wechseln der Bilder (alle 10 Sekunden)
     const operationImageIntervals = {};
@@ -461,20 +682,20 @@
     // Fallback-Daten für Verfügbarkeiten
     const fallbackAvailability = {
       usArmy: [
-        { code: "11A", name: "OfficerInfantry ", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
-        { code: "11B", name: "Infantryman", description: "Rifleman / MG / Grenadier / AT", status: "green", statusText: "Offen" },
-        { code: "12B", name: "Combat Engineer", description: "Sprengstoffe, Breaching, EOD", status: "yellow", statusText: "Breacher offen" },
-        { code: "68W", name: "Combat Medic", description: "Medizinische Versorgung", status: "red", statusText: "Geschlossen" },
-        { code: "25U", name: "Communication Specialist", description: "Funk / JTAC-Unterstützung", status: "red", statusText: "Geschlossen" },
-        { code: "11Z", name: "Infantry Senior Sergeant", description: "Platoon Sergeant / Lead", status: "red", statusText: "Nur erfahrene Spieler" },
-        { code: "153A", name: "Rotary Wing Pilot", description: "Transport‑Helikopter", status: "green", statusText: "Offen" },
-        { code: "152F", name: "Apache Pilot", description: "Angriffshubschrauber", status: "red", statusText: "Nur erfahrene Spieler" }
+        { code: "11A", name: "Infantry Officer", description: "Leitet ein Infanterie-Squad und plant taktische Bewegungen im Einsatzgebiet. Koordiniert Feuerunterstützung, Kommunikation und Einsatzaufgaben. Verantwortlich für Befehlsweitergabe, Missionsplanung und Einsatzführung. Überwacht die Einsatzbereitschaft, Moral und Ausbildung der Soldaten.", status: "red", statusText: "Offen" },
+        { code: "11B", name: "Infantryman", description: "Kernkampftruppe mit Aufgaben wie Schützen, MG-Bediener oder Grenadier. Führt Angriffs-, Sicherungs- und Verteidigungsoperationen durch. Beherrscht unterschiedliche Waffensysteme und taktische Bewegungsmuster. Übernimmt Aufgaben wie Aufklärung, Sicherung und Unterstützung im Gefecht.", status: "green", statusText: "Offen", image: "https://cdn.discordapp.com/attachments/1393842094258524160/1441530913929433178/200A421.JPG?ex=69353f88&is=6933ee08&hm=b5c2dca9d43ea56c28681be18ae509b2fe9305e0a935deed61aa13186e84304f&" },
+        { code: "12B", name: "Combat Engineer", description: "Spezialisiert auf Sprengtechniken, Hindernisüberwindung und Breaching. Errichtet Verteidigungsanlagen oder beseitigt feindliche Befestigungen. Unterstützt Infanterieeinheiten beim Öffnen von Zugangswegen. Kann improvisierte Sprengfallen erkennen und Gegenmaßnahmen einleiten.", status: "yellow", statusText: "Breacher offen" },
+        { code: "68W", name: "Combat Medic", description: "Verantwortlich für medizinische Erstversorgung unter Gefechtsbedingungen. Stabilisiert Verwundete und bereitet sie für Evakuierung vor. Führt lebensrettende Maßnahmen direkt an der Frontlinie aus. Unterstützt die Truppe auch präventiv durch medizinische Betreuung.", status: "red", statusText: "Geschlossen" },
+        { code: "25U", name: "Communication Specialist", description: "Betreibt Funk- und Kommunikationssysteme für die Truppe. Richtet Relaisstationen ein und stellt stabile Funkverbindungen sicher. Unterstützt Forward Air Controller/JTAC mit technischer Kommunikation. Gewährleistet zuverlässige Daten- und Sprachübertragung im Einsatz.", status: "red", statusText: "Geschlossen" },
+        { code: "11Z", name: "Infantry Senior Sergeant", description: "Dient als erfahrener Zugführer oder Senior NCO innerhalb der Infanterie. Koordiniert mehrere Squads und berät den Platoon Leader. Verantwortlich für Ausbildung, Disziplin und organisatorische Abläufe. Unterstützt die taktische Planung auf Zug-Ebene und überwacht ihre Umsetzung.", status: "red", statusText: "Nur erfahrene Spieler" },
+        { code: "153A", name: "Rotary Wing Pilot", description: "Steuert Transporthubschrauber wie Blackhawks für Truppen- und Materialtransport. Führt Insertions, Extractions und Logistikflüge durch. Unterstützt Bodentruppen durch schnelle Beweglichkeit und Flexibilität. Muss Navigation, Flugtaktiken und Crewkoordination sicher beherrschen.", status: "green", statusText: "Offen" },
+        { code: "152F", name: "Apache Pilot", description: "Pilotiert Angriffshubschrauber zur direkten Feuerunterstützung. Setzt präzise Bewaffnung wie Hellfire-Raketen oder Bordkanonen ein. Führt Aufklärung, Zielbekämpfung und Unterstützungsmissionen durch. Arbeitet eng mit Bodentruppen und JTACs zusammen, um Ziele effektiv zu bekämpfen.", status: "red", statusText: "Nur erfahrene Spieler" }
       ],
       usAirForce: [
-        { code: "1Z3X1", name: "TACP (JTAC)", description: "Koordiniert Luftunterstützung", status: "red", statusText: "Nur erfahrene Spieler" },
-        { code: "1T2X1", name: "PJ (Pararescue)", description: "MEDEVAC / Rescue unter Gefechtsbedingungen", status: "red", statusText: "Nur erfahrene Spieler" },
-        { code: "11F", name: "Fixed Wing Fighter Pilot", description: "CAS (A‑10, F/A‑18 etc.)", status: "green", statusText: "Offen" },
-        { code: "11M", name: "Fixed Wing Transport Pilot", description: "Lufttransport Personal & Ausrüstung", status: "red", statusText: "Geschlossen" },
+        { code: "1Z3X1", name: "TACP (JTAC)", description: "Koordiniert Luftnahunterstützung direkt vom Boden aus. Identifiziert Ziele, gibt Feuerfreigaben und dirigiert Flugzeuge im Einsatzraum. Stellt Verbindung zwischen Luftwaffe und Bodentruppen her. Benötigt präzise Kommunikation, Situationsbewusstsein und taktisches Verständnis.", status: "red", statusText: "Nur erfahrene Spieler", image: "https://cdn.discordapp.com/attachments/1393842094258524160/1441531451701989476/20251121195340_1.jpg?ex=69354008&is=6933ee88&hm=97b783070d6774b728e0621258bffed1d4e9e52a6bf91bab0b369da475f8b9db&" },
+        { code: "1T2X1", name: "PJ (Pararescue)", description: "Führt Rettungsmissionen unter extremen Kampfbedingungen durch. Spezialisiert auf MEDEVAC, medizinische Notfallversorgung und Evakuierung. Kann hinter feindlichen Linien operieren, um Verwundete zu retten. Beherrscht Fallschirmsprung, Bergungstechniken und medizinische Expertise.", status: "red", statusText: "Nur erfahrene Spieler" },
+        { code: "11F", name: "Fixed Wing Fighter Pilot", description: "Fliegt Kampfflugzeuge für Luftnahunterstützung (CAS) wie A-10 oder F/A-18. Bekämpft Bodenziele zur Unterstützung der Bodentruppen. Muss präzise Zielsysteme, Waffenabwurf und taktische Flugmanöver beherrschen. Koordiniert eng mit JTACs und anderen Luftfahrzeugen.", status: "green", statusText: "Offen" },
+        { code: "11M", name: "Fixed Wing Transport Pilot", description: "Fliegt Transportmaschinen für Personal-, Versorgungs- und Materialflüge. Führt taktische Landungen, Luftabwürfe und große Logistikoperationen durch. Gewährleistet den schnellen strategischen und taktischen Transport von Einheiten. Beherrscht komplexe Flugdynamik, Navigation und Missionsplanung.", status: "red", statusText: "Geschlossen" },
         { code: "Zeus", name: "Gamemaster", description: "Missionsleitung / Koordination", status: "yellow", statusText: "Auf Anfrage" }
       ]
     };
