@@ -44,6 +44,86 @@
         "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
         "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
       ]
+    },
+    {
+      "id": 4,
+      "title": "Operation 4",
+      "date": "2025-11-25",
+      "time": "10:15",
+      "type": "Kampfeinsatz",
+      "description": "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+      "detailedDescription": "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+      "participants": 32,
+      "status": "Abgeschlossen",
+      "images": [
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Operation 5",
+      "date": "2025-11-25",
+      "time": "10:15",
+      "type": "Kampfeinsatz",
+      "description": "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+      "detailedDescription": "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+      "participants": 32,
+      "status": "Abgeschlossen",
+      "images": [
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Operation 6",
+      "date": "2025-11-25",
+      "time": "10:15",
+      "type": "Kampfeinsatz",
+      "description": "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+      "detailedDescription": "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+      "participants": 32,
+      "status": "Abgeschlossen",
+      "images": [
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Operation 7",
+      "date": "2025-11-25",
+      "time": "10:15",
+      "type": "Kampfeinsatz",
+      "description": "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+      "detailedDescription": "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+      "participants": 32,
+      "status": "Abgeschlossen",
+      "images": [
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Operation 8",
+      "date": "2025-11-25",
+      "time": "10:15",
+      "type": "Kampfeinsatz",
+      "description": "Großangelegte Operation in der Wüstenregion. Luftunterstützung durch A-10 Warthogs.",
+      "detailedDescription": "Operation Desert Storm war eine großangelegte Kampfoperation in der Wüstenregion. Das 1st Battalion – 75th Ranger Regiment führte eine koordinierte Bodenoffensive durch, die durch Luftunterstützung von A-10 Warthogs unterstützt wurde. Die Operation umfasste mehrere Phasen: Aufklärung, Vorbereitung, Angriff und Sicherung. Die Luftunterstützung spielte eine entscheidende Rolle bei der Neutralisierung feindlicher Stellungen. Die Operation wurde erfolgreich abgeschlossen, alle primären und sekundären Ziele wurden erreicht.",
+      "participants": 32,
+      "status": "Abgeschlossen",
+      "images": [
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&",
+        "https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&"
+      ]
     }
   ]
 }
