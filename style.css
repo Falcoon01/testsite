@@ -442,6 +442,8 @@ h2 {
 
 .mos-item {
   margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   background: rgba(60, 60, 60, 0.4);
   border-radius: 12px;
@@ -553,7 +555,7 @@ h2 {
   max-width: 800px;
   box-sizing: border-box;
   position: relative;
-  z-index: 0;
+  z-index: 5;
 }
 .mos-item.active .dropdown-content {
   display: flex;
@@ -689,7 +691,7 @@ h2 {
   cursor: pointer;
   box-shadow: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 10;
+  z-index: 3;
   width: 50px;
   height: 50px;
   display: flex;
@@ -1004,6 +1006,8 @@ h2 {
     min-width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .mos-item button {
@@ -1018,6 +1022,7 @@ h2 {
     padding: 20px 22px;
     font-size: 15px;
     gap: 18px;
+    z-index: 5;
   }
 
   .mos-description {
@@ -1035,6 +1040,7 @@ h2 {
     height: 45px;
     padding: 12px 14px;
     font-size: 18px;
+    z-index: 3;
   }
 
   .slider-logo {
@@ -1054,6 +1060,8 @@ h2 {
     padding: 18px;
     margin-bottom: 18px;
     border-radius: 10px;
+    border-top: none;
+    margin-top: 0;
   }
 
   .operation-title {
@@ -1164,6 +1172,8 @@ h2 {
     min-width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .mos-item button {
@@ -1178,6 +1188,7 @@ h2 {
     font-size: 14px;
     gap: 15px;
     border-radius: 0 0 8px 8px;
+    z-index: 5;
   }
 
   .mos-header {
@@ -1240,6 +1251,7 @@ h2 {
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
+    z-index: 3;
   }
 
   .btn-left {
@@ -1295,6 +1307,8 @@ h2 {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
+    border-top: none;
+    margin-top: 0;
   }
 
   .operation-header {
