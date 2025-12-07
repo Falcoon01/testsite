@@ -2,7 +2,7 @@
   "usArmy": [
     {
       "code": "11A",
-      "name": "Infantry Officer 11111111111111111111",
+      "name": "Infantry Officer",
       "description": "Squad Leader & taktische Führung desweiten druchführen von sehr tollen dienge wie einen Ultra langen text schreiben zum schauen wie es sich verhält",
       "status": "red",
       "statusText": "Offen"
@@ -95,5 +95,6 @@
     }
   ]
 }
+
 
 
