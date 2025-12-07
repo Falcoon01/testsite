@@ -4,7 +4,7 @@
   --blue: #0a1a3c;
   --gold: #d4af37;
   --red: #b30000;
-  --green: #145200;
+  --green: #007800;
   --card: rgba(40, 40, 40, 0.35);
   --radius: 14px;
 }
@@ -398,7 +398,7 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   width: 100%;
   min-width: 700px;
-  max-width: 1400px;
+  max-width: 850px;
   overflow: hidden;
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
@@ -500,7 +500,7 @@ h2 {
   gap: 15px;
   width: 100%;
   min-width: 700px;
-  max-width: 100%;
+  max-width: 850px;
   box-sizing: border-box;
   position: relative;
   z-index: 0;
