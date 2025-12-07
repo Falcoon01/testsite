@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1st Battalion – 75th Ranger Regiment | Informationen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+
+        <h1>1st Battalion – 75th Ranger Regiment</h1>
+
+    <!-- Bilder‑Slider -->
+    <div class="section" id="image-slider">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1446926972751188101/20251206155655_1.jpg?ex=6935c340&is=693471c0&hm=ef5603b6357d27adbf45f09a48dca28d3e93a98777f7c8b91470ba29a96ec9e5&" class="active" alt="Slider Bild 1">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&" alt="Slider Bild 2">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg?ex=69355532&is=693403b2&hm=06f7b18c89cc298a514fe977010ffb7220b8e10ea2e6573a2fd55e173bbce16c&" alt="Slider Bild 3">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1441916565070151872/20251122224524_1.jpg?ex=69355532&is=693403b2&hm=dd96c4b13b69513c6f4c5875447209f452e53306126561d93c6a8ab99236869b&" alt="Slider Bild 4">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1441916565846233210/20251122230742_1.jpg?ex=69355532&is=693403b2&hm=51ef2302c0ec2aea89884bde05e04192ee4edfdefbf3b0e259eb80cdaf667b62&" alt="Slider Bild 5">
+      <img src="https://cdn.discordapp.com/attachments/1393842094258524160/1441531451701989476/20251121195340_1.jpg?ex=69354008&is=6933ee88&hm=97b783070d6774b728e0621258bffed1d4e9e52a6bf91bab0b369da475f8b9db&" alt="Slider Bild 6">
+      <button class="image-slider-btn image-slider-btn-left" onclick="moveImageSlide(-1)" aria-label="Vorheriges Bild">❮</button>
+      <button class="image-slider-btn image-slider-btn-right" onclick="moveImageSlide(1)" aria-label="Nächstes Bild">❯</button>
+      </div>
+
+    <!-- Einsatzberichte -->
+    <div class="section discord-section">
+      <h2>Jetzt mit machen</h2>
+      <a class="discord-btn" href="https://discord.gg/HGc3SSSxrm" target="_blank" id="discordBtn">Discord beitreten</a>
+    </div>
+
+    <!-- A-10 Warthog Flugzeug -->
+    <img src="https://cdn.discordapp.com/attachments/1441922777727766538/1446935487662133500/a-10-warthog.png?ex=6935cb2f&is=693479af&hm=0beee8fa8587e6efdab1888c0e5ac34585e8bac4634723d163223bf3c3debd30&" alt="A-10 Warthog" class="airplane" id="airplane">
+
+    <!-- MOS/AFSC Slider -->
+    <div class="section slider-container">
+      <h2>Einheiten</h2>
+      <div class="slides" id="slides">
+        <div class="slide" id="army-slide">
+          <div class="slide-title">US Army – MOS</div>
+          <div id="army-mos-container">
+            <!-- Wird dynamisch aus availability.json geladen -->
+          </div>
+        </div>
+        <div class="slide" id="airforce-slide">
+          <div class="slide-title">US Air Force – AFSC</div>
+          <div id="airforce-afsc-container">
+            <!-- Wird dynamisch aus availability.json geladen -->
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-btn btn-left" id="slideBtnLeft" onclick="moveSlide(-1)">❮</div>
+      <div class="slider-btn btn-right" id="slideBtnRight" onclick="moveSlide(1)">❯</div>
+    </div>
+
+    <!-- Einsatzberichte -->
+    <div class="section" id="operations-section">
+      <h2>Vergangene Einsätze</h2>
+      <div id="operations-container">
+        <!-- Wird dynamisch aus operations.json geladen -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Bilder-Slider
+    let currentImageIndex = 0;
+    const imageSlides = document.querySelectorAll('#image-slider img');
+    const totalImages = imageSlides.length;
+    let autoSlideInterval;
+
+    function updateImageSlider() {
+      imageSlides.forEach((img, index) => {
+        if (index === currentImageIndex) {
+          img.classList.add('active');
+        } else {
+          img.classList.remove('active');
+        }
+      });
+    }
+
+    function moveImageSlide(step) {
+      currentImageIndex = currentImageIndex + step;
+      if (currentImageIndex < 0) {
+        currentImageIndex = totalImages - 1;
+      } else if (currentImageIndex >= totalImages) {
+        currentImageIndex = 0;
+      }
+      updateImageSlider();
+      resetAutoSlide();
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => {
+        moveImageSlide(1);
+      }, 8000);
+    }
+
+    // Auto-Slide alle 8 Sekunden
+    resetAutoSlide();
+
+    // Pause Auto-Slide beim Hover über den Slider
+    const imageSlider = document.getElementById('image-slider');
+    imageSlider.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
+    imageSlider.addEventListener('mouseleave', () => {
+      resetAutoSlide();
+    });
+
+    // MOS/AFSC Slider
+    let index = 0;
+    const slideBtnLeft = document.getElementById('slideBtnLeft');
+    const slideBtnRight = document.getElementById('slideBtnRight');
+    
+    function updateSlideButtons() {
+      const slides = document.getElementById('slides');
+      const total = slides.children.length;
+      const sliderContainer = document.querySelector('.slider-container');
+      
+      // Linker Button: Verstecken auf US Army (index 0)
+      if (index === 0) {
+        slideBtnLeft.classList.add('hidden');
+      } else {
+        slideBtnLeft.classList.remove('hidden');
+      }
+      
+      // Rechter Button: Verstecken auf USAF (index 1, letzte Slide)
+      if (index === total - 1) {
+        slideBtnRight.classList.add('hidden');
+      } else {
+        slideBtnRight.classList.remove('hidden');
+      }
+      
+      // Rahmen blau machen auf Air Force Seite (index 1)
+      if (index === 1) {
+        sliderContainer.classList.add('airforce');
+      } else {
+        sliderContainer.classList.remove('airforce');
+      }
+    }
+    
+    function moveSlide(step){
+      const slides = document.getElementById('slides');
+      const total = slides.children.length;
+      index = index + step;
+      if(index < 0) index = total - 1;
+      if(index >= total) index = 0;
+      slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+      updateSlideButtons();
+    }
+    
+    // Initial Button-Status setzen
+    updateSlideButtons();
+
+    // Fallback-Daten für Einsatzberichte
+    const fallbackOperations = {
+      operations: [
+        {
+          id: 1,
+          title: "Operation Thunder Strike",
+          date: "2025-12-01",
+          time: "14:30",
+          type: "Kampfeinsatz",
+          description: "Koordinierte Angriffsoperation gegen feindliche Stellungen im Norden. Erfolgreiche Einnahme strategischer Positionen.",
+          detailedDescription: "Die Operation Thunder Strike wurde als koordinierte Angriffsoperation gegen feindliche Stellungen im nördlichen Sektor durchgeführt. Das 1st Battalion – 75th Ranger Regiment führte eine präzise Angriffsoperation durch, die zur erfolgreichen Einnahme strategischer Positionen führte. Die Operation umfasste koordinierte Manöver zwischen Infanterieeinheiten und Luftunterstützung. Alle Ziele wurden erfolgreich erreicht, ohne Verluste auf unserer Seite.",
+          participants: 24,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1446926972751188101/20251206155655_1.jpg?ex=6935c340&is=693471c0&hm=ef5603b6357d27adbf45f09a48dca28d3e93a98777f7c8b91470ba29a96ec9e5&",
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&"
+          ]
+        },
+        {
+          id: 2,
+          title: "Operation Night Watch",
+          date: "2025-11-28",
+          time: "22:00",
+          type: "Patrouille",
+          description: "Nachtpatrouille zur Aufklärung feindlicher Bewegungen. Keine Feindkontakte.",
+          detailedDescription: "Operation Night Watch war eine nächtliche Aufklärungspatrouille zur Überwachung feindlicher Bewegungen im östlichen Sektor. Die Einheit führte eine stille Patrouille durch, um Informationen über feindliche Aktivitäten zu sammeln. Während der gesamten Operation wurden keine Feindkontakte verzeichnet. Die gesammelten Informationen wurden erfolgreich an das Kommando weitergegeben und dienten als Grundlage für zukünftige Operationen.",
+          participants: 12,
+          status: "Abgeschlossen",
+          images: [
+            "https://cdn.discordapp.com/attachments/1393842094258524160/1444449071703134208/20251129211010_1.jpg?ex=69355147&is=6933ffc7&hm=20c210784c334d5ba4330eca7e2c087055165a59d36ad81a019b73cf60fd4374&"
+          ]
+        }
+      ]
+    };
+
+    function renderOperations(data) {
+      const container = document.getElementById('operations-container');
+      if (container && data.operations) {
+        container.innerHTML = data.operations.map(op => `
+          <div class="operation-card" data-operation-id="${op.id}">
+            <div class="operation-header">
+              <h3 class="operation-title">${op.title}</h3>
+              <div class="operation-meta">
+                <span class="operation-type">${op.type}</span>
+                <span class="operation-date">${new Date(op.date).toLocaleDateString('de-DE')}</span>
+              </div>
+            </div>
+            <div class="operation-description">${op.description}</div>
+            <div class="operation-stats">
+              <span>Teilnehmer: ${op.participants}</span>
+              <span class="operation-status">${op.status}</span>
+            </div>
+            <div class="operation-details">
+              <div class="operation-details-content">
+                <div class="operation-details-header">
+                  <h3 class="operation-details-title">${op.title}</h3>
+                  <div class="operation-details-meta">
+                    <span>Datum: ${new Date(op.date).toLocaleDateString('de-DE')}</span>
+                    ${op.time ? `<span>Zeit: ${op.time} Uhr</span>` : ''}
+                  </div>
+                </div>
+                ${op.detailedDescription ? `<div class="operation-details-text">${op.detailedDescription}</div>` : ''}
+                ${(op.images && op.images.length > 0) ? `
+                  <div class="operation-image-slider" data-operation-id="${op.id}">
+                    ${op.images.map((img, idx) => `
+                      <img src="${img}" alt="${op.title} - Bild ${idx + 1}" class="operation-details-image ${idx === 0 ? 'active' : ''}">
+                    `).join('')}
+                    ${op.images.length > 1 ? `
+                      <button class="operation-slider-btn operation-slider-btn-left" onclick="moveOperationImage(${op.id}, -1)" aria-label="Vorheriges Bild">❮</button>
+                      <button class="operation-slider-btn operation-slider-btn-right" onclick="moveOperationImage(${op.id}, 1)" aria-label="Nächstes Bild">❯</button>
+                    ` : ''}
+                  </div>
+                ` : (op.image ? `<img src="${op.image}" alt="${op.title}" class="operation-details-image">` : '')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+        
+        // Click-Handler für Aufklappen hinzufügen
+        document.querySelectorAll('.operation-card').forEach(card => {
+          card.addEventListener('click', function(e) {
+            // Verhindere Aufklappen wenn auf Slider-Button geklickt wird
+            if (e.target.classList.contains('operation-slider-btn')) {
+              return;
+            }
+            this.classList.toggle('active');
+            
+            // Starte automatisches Wechseln wenn geöffnet
+            if (this.classList.contains('active')) {
+              const operationId = this.dataset.operationId;
+              startOperationImageAutoSlide(operationId);
+            } else {
+              // Stoppe automatisches Wechseln wenn geschlossen
+              const operationId = this.dataset.operationId;
+              stopOperationImageAutoSlide(operationId);
+            }
+          });
+        });
+        
+        // Initialisiere automatisches Wechseln für alle geöffneten Slider
+        document.querySelectorAll('.operation-card.active').forEach(card => {
+          const operationId = card.dataset.operationId;
+          startOperationImageAutoSlide(operationId);
+        });
+      }
+    }
+    
+    // Automatisches Wechseln der Bilder (alle 10 Sekunden)
+    const operationImageIntervals = {};
+    
+    function startOperationImageAutoSlide(operationId) {
+      // Stoppe vorheriges Intervall falls vorhanden
+      if (operationImageIntervals[operationId]) {
+        clearInterval(operationImageIntervals[operationId]);
+      }
+      
+      const slider = document.querySelector(`.operation-image-slider[data-operation-id="${operationId}"]`);
+      if (!slider) return;
+      
+      const images = slider.querySelectorAll('.operation-details-image');
+      if (images.length <= 1) return;
+      
+      // Wechsle alle 10 Sekunden
+      operationImageIntervals[operationId] = setInterval(() => {
+        moveOperationImage(operationId, 1);
+      }, 10000);
+    }
+    
+    function stopOperationImageAutoSlide(operationId) {
+      if (operationImageIntervals[operationId]) {
+        clearInterval(operationImageIntervals[operationId]);
+        delete operationImageIntervals[operationId];
+      }
+    }
+    
+    // Manuelles Wechseln der Bilder
+    function moveOperationImage(operationId, direction) {
+      const slider = document.querySelector(`.operation-image-slider[data-operation-id="${operationId}"]`);
+      if (!slider) return;
+      
+      const images = slider.querySelectorAll('.operation-details-image');
+      if (images.length <= 1) return;
+      
+      let currentIndex = -1;
+      images.forEach((img, idx) => {
+        if (img.classList.contains('active')) {
+          currentIndex = idx;
+        }
+      });
+      
+      if (currentIndex === -1) return;
+      
+      // Berechne neuen Index
+      let newIndex = currentIndex + direction;
+      if (newIndex < 0) {
+        newIndex = images.length - 1;
+      } else if (newIndex >= images.length) {
+        newIndex = 0;
+      }
+      
+      // Wechsle Bild
+      images[currentIndex].classList.remove('active');
+      images[newIndex].classList.add('active');
+      
+      // Setze automatisches Wechseln zurück
+      stopOperationImageAutoSlide(operationId);
+      startOperationImageAutoSlide(operationId);
+    }
+
+    // Universelle Funktion zum Laden von JSON-Dateien (funktioniert auch mit file:///)
+    function loadJSONFile(url, callback) {
+      const timestamp = new Date().getTime();
+      const urlWithCache = `${url}?t=${timestamp}`;
+      
+      // Versuche zuerst fetch() (funktioniert mit http:// und https://)
+      fetch(urlWithCache, { cache: 'no-store' })
+        .then(response => {
+          if (!response.ok) throw new Error('Datei nicht gefunden');
+          return response.json();
+        })
+        .then(data => {
+          if (data && (data.operations || data.usArmy || data.usAirForce)) {
+            callback(data, null);
+          } else {
+            callback(null, new Error('Ungültiges JSON-Format oder leere Datei'));
+          }
+        })
+        .catch(fetchError => {
+          // Fallback: XMLHttpRequest (funktioniert manchmal besser mit file:///)
+          console.log('Fetch fehlgeschlagen, versuche XMLHttpRequest:', fetchError);
+          const xhr = new XMLHttpRequest();
+          
+          // Für file:/// Protokoll: Verwende absolute URL relativ zur aktuellen HTML-Datei
+          let urlToLoad;
+          if (window.location.protocol === 'file:') {
+            // Erstelle absolute URL basierend auf dem aktuellen Pfad
+            const basePath = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+            urlToLoad = basePath + url;
+            console.log('Lade Datei mit file:/// Protokoll:', urlToLoad);
+          } else {
+            urlToLoad = urlWithCache;
+          }
+          
+          xhr.open('GET', urlToLoad, true);
+          xhr.overrideMimeType('application/json');
+          
+          let hasCalled = false;
+          
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && !hasCalled) {
+              hasCalled = true;
+              
+              // Bei file:/// Protokoll ist status oft 0, das ist OK
+              if (xhr.status === 0 || xhr.status === 200) {
+                if (!xhr.responseText || xhr.responseText.trim() === '') {
+                  callback(null, new Error('Die Datei ist leer'));
+                  return;
+                }
+                
+                try {
+                  const data = JSON.parse(xhr.responseText);
+                  
+                  // Validiere, dass die Daten die erwartete Struktur haben
+                  if (data && (data.operations || data.usArmy || data.usAirForce)) {
+                    callback(data, null);
+                  } else {
+                    callback(null, new Error('Ungültiges JSON-Format: Erwartete Struktur nicht gefunden'));
+                  }
+                } catch (parseError) {
+                  console.error('JSON Parse Fehler:', parseError);
+                  console.error('Response Text:', xhr.responseText.substring(0, 200));
+                  callback(null, new Error(`JSON Parse Fehler: ${parseError.message}`));
+                }
+              } else {
+                callback(null, new Error(`HTTP ${xhr.status}: ${xhr.statusText || 'Unbekannter Fehler'}`));
+              }
+            }
+          };
+          
+          xhr.onerror = function() {
+            if (!hasCalled) {
+              hasCalled = true;
+              callback(null, new Error('Netzwerkfehler beim Laden der Datei. Stellen Sie sicher, dass die Datei existiert und lesbar ist.'));
+            }
+          };
+          
+          xhr.ontimeout = function() {
+            if (!hasCalled) {
+              hasCalled = true;
+              callback(null, new Error('Timeout beim Laden der Datei'));
+            }
+          };
+          
+          // Timeout setzen (5 Sekunden)
+          xhr.timeout = 5000;
+          
+          try {
+            xhr.send();
+          } catch (sendError) {
+            if (!hasCalled) {
+              hasCalled = true;
+              callback(null, new Error(`Fehler beim Senden der Anfrage: ${sendError.message}`));
+            }
+          }
+        });
+    }
+
+    // Daten von externen JSON-Dateien laden
+    function loadOperations() {
+      loadJSONFile('data/operations.json', (data, error) => {
+        if (error) {
+          console.warn('Fehler beim Laden der Einsatzberichte, verwende Fallback-Daten:', error);
+          renderOperations(fallbackOperations);
+        } else {
+          renderOperations(data);
+        }
+      });
+    }
+
+    // Fallback-Daten für Verfügbarkeiten
+    const fallbackAvailability = {
+      usArmy: [
+        { code: "11A", name: "Infantry Officer", description: "Squad Leader & taktische Führung", status: "green", statusText: "Offen" },
+        { code: "11B", name: "Infantryman", description: "Rifleman / MG / Grenadier / AT", status: "green", statusText: "Offen" },
+        { code: "12B", name: "Combat Engineer", description: "Sprengstoffe, Breaching, EOD", status: "yellow", statusText: "Breacher offen" },
+        { code: "68W", name: "Combat Medic", description: "Medizinische Versorgung", status: "red", statusText: "Geschlossen" },
+        { code: "25U", name: "Communication Specialist", description: "Funk / JTAC-Unterstützung", status: "red", statusText: "Geschlossen" },
+        { code: "11Z", name: "Infantry Senior Sergeant", description: "Platoon Sergeant / Lead", status: "red", statusText: "Nur erfahrene Spieler" },
+        { code: "153A", name: "Rotary Wing Pilot", description: "Transport‑Helikopter", status: "green", statusText: "Offen" },
+        { code: "152F", name: "Apache Pilot", description: "Angriffshubschrauber", status: "red", statusText: "Nur erfahrene Spieler" }
+      ],
+      usAirForce: [
+        { code: "1Z3X1", name: "TACP (JTAC)", description: "Koordiniert Luftunterstützung", status: "red", statusText: "Nur erfahrene Spieler" },
+        { code: "1T2X1", name: "PJ (Pararescue)", description: "MEDEVAC / Rescue unter Gefechtsbedingungen", status: "red", statusText: "Nur erfahrene Spieler" },
+        { code: "11F", name: "Fixed Wing Fighter Pilot", description: "CAS (A‑10, F/A‑18 etc.)", status: "green", statusText: "Offen" },
+        { code: "11M", name: "Fixed Wing Transport Pilot", description: "Lufttransport Personal & Ausrüstung", status: "red", statusText: "Geschlossen" },
+        { code: "Zeus", name: "Gamemaster", description: "Missionsleitung / Koordination", status: "yellow", statusText: "Auf Anfrage" }
+      ]
+    };
+
+    function renderAvailability(data) {
+      // US Army MOS laden
+      const armyContainer = document.getElementById('army-mos-container');
+      if (armyContainer && data.usArmy) {
+        armyContainer.innerHTML = data.usArmy.map(item => `
+          <div class="mos-item">
+            <button>${item.code} – ${item.name}<span class="status-indicator ${item.status}"></span></button>
+            <div class="dropdown-content">${item.description}<br>Status: <span class="${item.status}">${item.statusText}</span></div>
+          </div>
+        `).join('');
+      }
+      
+      // US Air Force AFSC laden
+      const airforceContainer = document.getElementById('airforce-afsc-container');
+      if (airforceContainer && data.usAirForce) {
+        airforceContainer.innerHTML = data.usAirForce.map(item => `
+          <div class="mos-item">
+            <button>${item.code} – ${item.name}<span class="status-indicator ${item.status}"></span></button>
+            <div class="dropdown-content">${item.description}<br>Status: <span class="${item.status}">${item.statusText}</span></div>
+          </div>
+        `).join('');
+      }
+      
+      // Dropdown-Funktionalität für neu geladene Items
+    document.querySelectorAll('.mos-item button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.parentElement.classList.toggle('active');
+      });
+    });
+    }
+
+    function loadAvailability() {
+      loadJSONFile('data/availability.json', (data, error) => {
+        if (error) {
+          console.warn('Fehler beim Laden der Verfügbarkeiten, verwende Fallback-Daten:', error);
+          renderAvailability(fallbackAvailability);
+        } else {
+          renderAvailability(data);
+        }
+      });
+    }
+
+    // Funktionen zum manuellen Neuladen der Daten
+    function reloadOperations(event) {
+      const btn = event ? event.target : document.querySelector('#operations-section .reload-btn');
+      if (!btn) return;
+      
+      btn.classList.add('loading');
+      btn.textContent = '⏳ Lädt...';
+      btn.disabled = true;
+      
+      loadJSONFile('data/operations.json', (data, error) => {
+        btn.classList.remove('loading');
+        btn.textContent = '🔄 Neu laden';
+        btn.disabled = false;
+        
+        if (error) {
+          console.error('Fehler beim Neuladen der Einsatzberichte:', error);
+          alert(`Fehler beim Neuladen der Daten:\n\n${error.message}\n\nBitte überprüfen Sie:\n- Existiert die Datei data/operations.json?\n- Ist die JSON-Syntax korrekt?\n- Ist die Datei lesbar?`);
+          // Verwende Fallback-Daten als Backup
+          renderOperations(fallbackOperations);
+        } else {
+          renderOperations(data);
+          // Visuelles Feedback
+          btn.style.background = 'rgba(0,255,0,0.3)';
+          setTimeout(() => {
+            btn.style.background = '';
+          }, 1000);
+        }
+      });
+    }
+    
+    function reloadAvailability(event) {
+      const btn = event ? event.target : document.querySelector('.slider-container .reload-btn');
+      if (!btn) return;
+      
+      btn.classList.add('loading');
+      btn.textContent = '⏳ Lädt...';
+      btn.disabled = true;
+      
+      loadJSONFile('data/availability.json', (data, error) => {
+        btn.classList.remove('loading');
+        btn.textContent = '🔄 Neu laden';
+        btn.disabled = false;
+        
+        if (error) {
+          console.error('Fehler beim Neuladen der Verfügbarkeiten:', error);
+          alert(`Fehler beim Neuladen der Daten:\n\n${error.message}\n\nBitte überprüfen Sie:\n- Existiert die Datei data/availability.json?\n- Ist die JSON-Syntax korrekt?\n- Ist die Datei lesbar?`);
+          // Verwende Fallback-Daten als Backup
+          renderAvailability(fallbackAvailability);
+        } else {
+          renderAvailability(data);
+          // Visuelles Feedback
+          btn.style.background = 'rgba(0,255,0,0.3)';
+          setTimeout(() => {
+            btn.style.background = '';
+          }, 1000);
+        }
+      });
+    }
+
+    // Funktion zum Initialisieren - wird sofort oder bei DOMContentLoaded aufgerufen
+    function initializePage() {
+      // Daten laden
+      loadOperations();
+      loadAvailability();
+      
+      // Discord Button Animation
+      const discordBtn = document.getElementById('discordBtn');
+      const airplane = document.getElementById('airplane');
+      let isAnimating = false;
+      let animationTimeout = null;
+
+      if (discordBtn && airplane) {
+        // Warte bis das Bild geladen ist
+        airplane.addEventListener('load', () => {
+          console.log('Flugzeug-Bild geladen');
+        });
+        
+        airplane.addEventListener('error', () => {
+          console.error('Fehler beim Laden des Flugzeug-Bildes');
+        });
+
+        discordBtn.addEventListener('mouseenter', () => {
+          if (!isAnimating) {
+            isAnimating = true;
+            
+            // Entferne die Animation-Klasse und setze zurück
+            airplane.classList.remove('animate');
+            airplane.style.animation = 'none';
+            airplane.style.transform = 'translateX(-300px) translateY(-150px) rotate(30deg) scale(0.7)';
+            
+            // Force reflow
+            void airplane.offsetWidth;
+            
+            // Starte die Animation nach kurzer Verzögerung
+            setTimeout(() => {
+              airplane.classList.add('animate');
+              airplane.style.animation = '';
+            }, 50);
+            
+            // Animation zurücksetzen nach Abschluss
+            if (animationTimeout) clearTimeout(animationTimeout);
+            animationTimeout = setTimeout(() => {
+              airplane.classList.remove('animate');
+              airplane.style.transform = 'translateX(-300px) translateY(-150px) rotate(30deg) scale(0.7)';
+              isAnimating = false;
+            }, 2500);
+          }
+        });
+      } else {
+        console.error('Discord Button oder Flugzeug nicht gefunden');
+      }
+    }
+
+    // Initialisierung aufrufen
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializePage);
+    } else {
+      initializePage();
+    }
+  </script>
+
+</body>
+</html>
+
