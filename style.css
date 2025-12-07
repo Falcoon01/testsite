@@ -13,7 +13,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
-  background-image: url('https://cdn.discordapp.com/attachments/1396821011038474310/1443003453885648978/1_75RB_Promo28.png?ex=693554f1&is=69340371&hm=9cd08833cdc637674adce83ec5644cf0154eed23c809e29bcf9ee7d01db0e5f2&');
+  background-image: url('images/misc/backround.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
