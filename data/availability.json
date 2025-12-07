@@ -2,9 +2,9 @@
   "usArmy": [
     {
       "code": "11A",
-      "name": "Infantry Officer",
+      "name": "Infantry Officer ",
       "description": "Squad Leader & taktische Führung",
-      "status": "green",
+      "status": "red",
       "statusText": "Offen"
     },
     {
