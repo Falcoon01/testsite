@@ -4,7 +4,7 @@
       "code": "11A",
       "name": "Infantry Officer",
       "description": "Squad Leader & taktische Führung",
-      "status": "red",
+      "status": "green",
       "statusText": "Offen"
     },
     {
@@ -95,6 +95,7 @@
     }
   ]
 }
+
 
 
 
