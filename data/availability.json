@@ -10,9 +10,10 @@
     {
       "code": "11B",
       "name": "Infantryman",
-      "description": "Rifleman / MG / Grenadier / AT",
+      "description": "Rifleman / MG / Grenadier / AT - Grundlage aller Infanterieoperationen",
       "status": "green",
-      "statusText": "Offen"
+      "statusText": "Offen",
+      "image": "https://cdn.discordapp.com/attachments/1393842094258524160/1441916564638273607/20251122202627_1.jpg"
     },
     {
       "code": "12B",
@@ -95,6 +96,7 @@
     }
   ]
 }
+
 
 
 
