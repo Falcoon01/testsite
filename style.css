@@ -900,7 +900,76 @@ h2 {
   opacity: 0.8;
 }
 
+/* Tablet und kleinere Geräte */
 @media (max-width: 768px) {
+  .wrapper {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(1.5em, 5vw, 2.2em);
+    margin: 30px 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    margin: 0 0 30px 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown-Menüs für Tablets */
+  .mos-item {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .mos-item .dropdown-content {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px 20px;
+    font-size: 15px;
+  }
+
+  /* Slider-Buttons */
+  .slider-btn {
+    width: 45px;
+    height: 45px;
+    padding: 12px 14px;
+    font-size: 18px;
+  }
+
+  .slider-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .image-slider-btn {
+    width: 45px;
+    height: 45px;
+    padding: 12px 14px;
+    font-size: 18px;
+  }
+
+  /* Operation Cards */
+  .operation-card {
+    padding: 15px;
+  }
+
+  .operation-title {
+    font-size: 1.2em;
+  }
+
+  .operation-description {
+    font-size: 0.95em;
+  }
+
+  /* Social Media */
   .social-icons {
     gap: 30px;
   }
@@ -913,6 +982,220 @@ h2 {
   .social-icon svg {
     width: 28px;
     height: 28px;
+  }
+
+  /* Discord Button */
+  .discord-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: clamp(1.3em, 6vw, 1.8em);
+    margin: 20px 0 5px 0;
+    letter-spacing: 0.3px;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+    margin: 0 0 20px 0;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  /* Dropdown-Menüs für Smartphones */
+  .mos-item {
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .mos-item button {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .mos-item .dropdown-content {
+    padding: 15px;
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  .mos-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .mos-code {
+    font-size: 16px;
+  }
+
+  .mos-name {
+    font-size: 16px;
+  }
+
+  .mos-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .mos-image img {
+    max-height: 250px;
+  }
+
+  /* Slider-Buttons für Smartphones */
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .btn-left {
+    left: 10px;
+  }
+
+  .btn-right {
+    right: 10px;
+  }
+
+  .slider-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .image-slider-btn {
+    width: 40px;
+    height: 40px;
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .image-slider-btn-left {
+    left: 10px;
+  }
+
+  .image-slider-btn-right {
+    right: 10px;
+  }
+
+  /* Image Slider */
+  #image-slider {
+    height: 250px;
+    border-radius: 10px;
+  }
+
+  /* Operation Cards für Smartphones */
+  .operation-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .operation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .operation-title {
+    font-size: 1.1em;
+  }
+
+  .operation-meta {
+    font-size: 0.85em;
+  }
+
+  .operation-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .operation-details {
+    padding: 15px;
+  }
+
+  .operation-details-content {
+    padding: 15px;
+  }
+
+  .operation-details-title {
+    font-size: 1.2em;
+  }
+
+  .operation-details-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+
+  .operation-image-slider {
+    height: 200px;
+  }
+
+  .operation-slider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  /* Social Media für Smartphones */
+  .social-section {
+    padding: 20px 0;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Discord Button */
+  .discord-section {
+    padding: 20px 0;
+  }
+
+  .discord-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Status Indicators */
+  .status-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .status-value {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* A-10 Animation anpassen */
+  .airplane {
+    width: 80px;
+    height: 60px;
   }
 }
 
