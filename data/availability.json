@@ -3,7 +3,7 @@
     {
       "code": "11A",
       "name": "Infantry Officer",
-      "description": "Squad Leader & taktische Führung desweiten druchführen von sehr tollen dienge wie einen Ultra langen text schreiben zum schauen wie es sich verhält",
+      "description": "Squad Leader & taktische Führung",
       "status": "red",
       "statusText": "Offen"
     },
@@ -95,6 +95,7 @@
     }
   ]
 }
+
 
 
 
